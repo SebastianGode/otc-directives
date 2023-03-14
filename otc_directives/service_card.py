@@ -17,6 +17,7 @@ from docutils import nodes
 from docutils.parsers.rst import Directive
 from docutils.parsers.rst import directives
 from sphinx.util import logging
+from sphinx.util.docutils import SphinxDirective
 
 
 LOG = logging.getLogger(__name__)
@@ -26,7 +27,7 @@ class service_card(nodes.General, nodes.Element):
     pass
 
 
-class ServiceCard(Directive):
+class ServiceCard(SphinxDirective):
     node_class = service_card
     option_spec = {
         # 'service_type': directives.unchanged_required,
